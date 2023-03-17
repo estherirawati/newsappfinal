@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/detail_kdrama_screen.dart';
 import 'package:newsapp/detail_news_screen.dart';
 import 'package:newsapp/kdrama_screen.dart';
+import 'package:newsapp/model/kdrama.dart';
 import 'package:newsapp/more_news.dart';
 import 'package:newsapp/news_screen.dart';
 import 'model/article.dart';
@@ -32,8 +34,12 @@ class MyApp extends StatelessWidget {
         NewsScreen.routeName: (context)=>const NewsScreen(),
         KdramaScreen.routeName: (context)=>const KdramaScreen(),
         DetailNewsScreen.routeName: (context)=> DetailNewsScreen(
-          article: ModalRoute.of(context)?.settings.arguments as Article
+            article: ModalRoute.of(context)?.settings.arguments as Article
         ),
+        DetailKDramaScreen.routeName: (context)=> DetailKDramaScreen(
+            kdrama : ModalRoute.of(context)?.settings.arguments as KoreanDrama
+        ),
+
       },
     );
   }
